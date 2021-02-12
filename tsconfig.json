@@ -16,7 +16,15 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": "src/",
+    "paths": {
+      "@features/*": ["features/*"],
+      "@utils/*": ["utils/*"],
+      "@components/*": ["components/*"],
+      "@store/*": ["store/*"],
+      "@interfaces": ["interfaces"]
+    }
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]
