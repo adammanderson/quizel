@@ -4,6 +4,7 @@ import Categories from '@features/Categories/Categories';
 import type { RootState } from '@store/index';
 import fetchRound from '@store/fetchRound';
 import { IConfig, IDifficulty } from '@interfaces';
+import Button from '@components/Button';
 
 export default function Generator(): React.ReactElement {
   const [config, setConfig] = React.useState<IConfig>({
@@ -19,9 +20,7 @@ export default function Generator(): React.ReactElement {
       <h1>Round Generator</h1>
       <input type="number" defaultValue={config.amount} onChange={(event) => setConfig({ ...config, amount: event.target.value })} />
       <Categories onSelect={(category) => setConfig({ ...config, category })} />
-      <button type="button" onClick={() => dispatch(fetchRound(config))}>
-        START
-      </button>
+      <Button onClick={() => dispatch(fetchRound(config))}>START</Button>
     </div>
   );
 }

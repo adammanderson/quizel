@@ -9,10 +9,9 @@ export default function Home(): React.ReactElement {
   const { rounds } = useSelector((state: RootState) => state);
   const latestRound = rounds.length && rounds.find(({ complete }) => !complete);
 
-  console.log(latestRound);
   return (
     <Layout>
-      <h1>Quizel</h1>
+      <h1 className="text-2xl">Quizel</h1>
       {latestRound ? <Round round={latestRound} /> : <Generator />}
     </Layout>
   );

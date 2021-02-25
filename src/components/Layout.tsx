@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps): React.ReactElement {
   return (
-    <div>
+    <div className="antialiased text-gray-800">
       <Navigator />
       {children}
     </div>
